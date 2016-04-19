@@ -1,1 +1,1 @@
-# libs_demo
+组件化及require.js模板
