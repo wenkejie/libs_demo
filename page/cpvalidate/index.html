@@ -1,0 +1,30 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>demo</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="ClearType" content="true">
+	<!-- 样式引入 -->
+<!-- 	<link rel="stylesheet" href="widget/spinner/jquery.spinner.css"> -->
+	<link rel="stylesheet" href="../../css/example.css">
+	<link rel="stylesheet" href="../../css/common-v1.2.css">
+</head>
+<body>
+	<div class="tal nui-scroll">
+		<h4>表单验证</h4>
+			<div class="nui-form-cell">
+				<input id="email" name="email" class="nui-input j-check-input w80"type="text" validate="*e-100" value="2591972471@qq.com"></div>
+			<a href="javascript:" class="nui-btn j-updata-check">确定</a>
+    </div>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/require.js"></script>
+	<script type="text/javascript" src="/static/js/main2.js" ></script>
+	<script type="text/javascript">
+			require(["cpvalidate-config"], function(){
+				// console.log("===")
+			})
+	</script>
+</body>
+</html>

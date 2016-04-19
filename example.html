@@ -1,0 +1,173 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>demo</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="ClearType" content="true">
+	<!-- 样式引入 -->
+<!-- 	<link rel="stylesheet" href="widget/spinner/jquery.spinner.css"> -->
+	<link rel="stylesheet" href="css/example.css">
+	<link rel="stylesheet" href="css/common-v1.2.css">
+</head>
+<body>
+	<div class="wrapper">
+    	<h1 class="example-title">大掌柜平台 视觉组件</h1>
+    	<div class="mould mould-input mould-border-right">
+       		<h4>spinner</h4>
+       		<ul>
+       			<li>
+       				<input type="text" class="spinner"/>
+       			</li>
+       		</ul>
+       		<h4>datepicker</h4>
+       		<ul>
+       			<li class="tal">
+       				<div class="nui-form-cell">
+						<input type="text" id="typeoftime-fir" class="nui-input w80" onfocus="$(this).datepicker();" />
+					</div>
+       			</li>
+       			<li class="tal">
+       				<div class="nui-form-cell w150">
+						<input type="text" id="datepicker" class="nui-input " />
+					</div>
+       			</li>
+       		</ul>
+       		<h4>富文本编辑器</h4>
+       		<ul>
+       			<li class="tal">
+       				<script id="container" name="content" type="text/plain">
+				        这里写你的初始化内容
+				    </script>
+       			</li>
+       		</ul>
+       		<h4>表单验证</h4>
+       		<ul>
+       			<li class="tal nui-scroll">
+       				<div class="nui-form-cell">
+						<input id="email" name="email" class="nui-input j-check-input w80"type="text" validate="*e-100" value="2591972471@qq.com">
+					</div>
+					<a href="javascript:" class="nui-btn j-updata-check">确定</a>
+       			</li>
+       		</ul>
+       		<h4>文件上传</h4>
+       		<ul>
+       			<li class="tal nui-scroll">
+       				<p><input type="file" id="file1" name="file" /></p>
+				    <a href="javascript:" class="nui-btn j-upload">上传</a>
+				    <p><img id="img1" alt="上传成功啦" src="" /></p>
+       			</li>
+       		</ul>
+    	</div>
+    	<div class="mould mould-input">
+       		<h4>Ztree</h4>
+       		<ul>
+       			<li>
+       				<div class="zTreeDemoBackground left">
+       					<ul id="treeDemo" class="ztree"></ul>
+       				</div>
+       			</li>
+       		</ul>
+       		<h4>dialog</h4>
+       		<ul>
+       			<li>
+       				<a class="nui-btn j-notice" href="javascript:">警告窗</a>
+       				<a class="nui-btn j-open-win" href="javascript:">默认窗口</a>
+       			</li>
+       		</ul>
+       		<h4>select</h4>
+       		<ul>
+       			<li class="tal">
+       				<label for="">nrichselect</label>
+       				<div class="nui-form-cell" >
+       					<input id="j-nselect" class="nui-input" type="text" />
+					</div>
+       			</li>
+       			<li class="tal">
+       				<label for="">nselect</label>
+       				<div  id="j-test-nselect" class="nui-form-cell" >
+       					<input class="nui-input" type="text" />
+       				</div>
+       			</li>
+       			<li class="tal">
+       				<label for="">multiselect</label>
+       				<div class="nui-form-cell">
+       					<select id="j-multiselect" title="Basic example" multiple="multiple" name="example-basic" size="5">
+       						<option value="V1">Option 1</option>
+       						<option value="V2">Option 2</option>
+       						<option value="V3">Option 3</option>
+       						<option value="option4">Option 4</option>
+       						<option value="option5">Option 5</option>
+       						<option value="option6">Option 6</option>
+       						<option value="option7">Option 7</option>
+       						<option value="option8">Option 8</option>
+       						<option value="option9">Option 9</option>
+       						<option value="option10">Option 10</option>
+       						<option value="option11">Option 11</option>
+       						<option value="option12">Option 12</option>
+       					</select>
+       				</div>
+       			</li>
+       			<li class="tal">
+       				<label for="">RichSelect</label>
+       				<div class="nui-form-cell" >
+       					<input id="j-test-RichSelect" class="nui-input" type="text" />
+       				</div>
+       			</li>
+
+       			<li class="tal">
+       				
+       		</ul>
+       		<h4>进度条和复制板</h4>
+       		<ul>
+       			<li class="tal">
+       				<a href="javascript:" id="j-sudu-turn" class="nui-btn">进度条</a><br/><br/>
+       				 <a id="copy-button" class="j-copy" type="button" data-clipboard-text="这里是用于复制的内容，CodePlayer" value="复制">复制</a>
+       			</li>
+       			<li>
+       				<div id="chartTest" style="min-width:800px;height:400px"></div>
+       			</li>
+       		</ul>
+    	</div>
+
+	</div>
+	<script type="text/javascript">
+		window.UEDITOR_HOME_URL = "./widget/ueditor/";
+	</script>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript" src="static/lib/require/require.js" data-main="static/js/main"></script>
+	<script type="text/javascript">
+		// require.config({
+		// 　　　　paths: {
+		// 　　　　　　"spinner": "widget/spinner/jquery.spinner"
+		// 　　　　}
+		// });
+		// require(['spinner'], function (){
+		// 　　　$('.spinner').spinner({value:0,max : 5});
+		// });
+		/*入口脚本*/
+		// require.config({
+		//     // baseUrl: "static/",
+		//     paths: {
+		// 　　　　　　"spinner": "widget/spinner/jquery.spinner"
+		// 　　　},
+		//     waitSeconds: 15,
+		//     map: {
+		//         '*': {
+		//             'css': 'static/js/css.min'
+		//         }
+		//     },
+		//     shim : {
+		//         'spinner': ['css!widget/spinner/jquery.spinner']
+		//     }
+		// });
+
+		// require(['spinner'], function (){
+		// 　　　$('.spinner').spinner({value:0,max : 5});
+		// });
+		// var ue = UE.getEditor('container');
+		
+	</script>
+</body>
+</html>

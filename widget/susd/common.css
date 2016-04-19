@@ -1,0 +1,703 @@
+@charset "utf-8";
+html body{background: url(../skins/default/bg-content.png)}
+.bodyScroll{overflow-x:hidden;overflow-y:scroll;position:relative}
+.bodyNoBg{background:none}
+.tableContainer{height:100%}
+.tableScroll{height:415px;width:100%;position:relative;zoom:1;padding:0;margin-right:0;
+overflow-y:scroll;}
+.messageTable .tableScroll{height:377px;margin:0;_margin-right:17px}
+.tableScrollAll .tableScroll{overflow:auto}
+/*
+.fs11{ font-size:11px}
+*/
+.w100p{width:100%}
+.detailInfo s{ margin-right:5px}
+.isScroll{ margin-left:-9px}
+
+/* 数据表格 包括状态选择按钮 */
+.ui-table{ width:100%;*width:98%;_border-bottom:1px solid #B6C5CD}/*为了兼容把99%改成98%了，by:Evan*/
+.ui-table thead tr{background:#C8D3DB url(../skins/default/table_bg.png) repeat-x 0 0; height:27px; *height:21px}
+.ui-table thead tr.tophead{background:#E8EDF0}
+.ui-table thead tr.tophead th{color:#6181A0;padding:2px 10px}
+.ui-table th{ white-space:nowrap; font-weight:700; color:#014F65;zoom:1}
+.ui-table th.hover{ background:url(../skins/default/table_bg.png) repeat-x 0 -29px}
+.ui-table th s.sortIcon{ width:8px; height:11px; background:url(../skins/default/table.png) no-repeat -12px -16px; margin-left:3px;_background-position: -12px -16px}
+.ui-table th.sortup .sortIcon{ background-position: -20px -16px}
+.ui-table th.sortdown .sortIcon{ background-position: -28px -16px}
+
+.ui-table tr{background:#fff;}
+.ui-table th, .ui-table td{ border:1px solid #B6C5CD; padding:4px 5px}
+.ui-table th{border-color:#86B2C9}
+.ui-table tr td{height:22px;white-space: nowrap;}
+.ui-table tbody tr.odd-bg{ background:#F2F4F6}
+.ui-table tbody tr.notread{ color: #069}
+.ui-table tbody tr.hover,.ui-table tbody tr.active{ background:#E2E9EE url(../skins/default/table_bg.png) repeat-x 0 -58px; color: #033}
+.ui-table tbody tr.active td {text-shadow: 1px 1px 0 #fff}
+.ui-table thead th .corner{ width:3px;height:3px; overflow:hidden; position:absolute;left:0; top:0; background:url(../skins/default/table.png)}
+.ui-table thead th .cornerlr{ left:auto;right:0;background-position:-3px 0;}
+
+.ui-table a{ color:#06C}
+.ui-table a:hover{ text-decoration:underline}
+.ui-table-message tbody td{ padding:6px}
+
+.ui-table .ui-table-action{text-algin:center;font-size:0;white-space:nowrap}
+.ui-table .ui-table-action .icon{text-algin:center;margin:0 1px}
+/*下拉内容框*/
+.ui-table .ui-table-toggle-content{ display:none;background:#F8F8EF url(../skins/default/table_bg.png) repeat-x 0 -493px}
+.ui-table .ui-table-toggle-content td{ padding:8px 0}
+.ui-table-message .ui-table-toggle-content td{ padding:10px}
+.ui-table-toggle-content .ui-form{ width:780px}
+.ui-table-toggle-content .btnLine{ float:right;padding-left:0}
+.ui-table-toggle-content .btnLine a{ margin:0 0 5px 0;float:right;clear:both}
+
+.message-toggle-content{ border-top:1px dashed #ccc; overflow:hidden;zoom:1}
+.message-toggle-content li span{ font-weight:bold; display:inline-block; width:80px; text-align:right; margin-right:8px}
+.message-toggle-content li{ border-bottom:1px dashed #ccc; height:22px; line-height:22px}
+.message-toggle-content li.attention{ font-weight: bold; color:#c60; padding-left:8px}
+/*状态选择按钮*/
+.ui-table thead .ui-table-status-btn{ display: inline-block; width:12px; height:12px; overflow:hidden; margin-left:5px; background:url(../skins/default/table.png) no-repeat 0 -3px; text-indent:-100px; line-height:12px}
+.ui-table thead .ui-table-status-btn:hover{ background-position:0 -15px}
+.ui-table th .ui-table-status-list{ border:1px solid #ccc; background:#fff; padding:8px; position:absolute; font-weight:400;margin:0 0 0 29px;*margin:18px 0 0 -12px; display:none}
+.ui-table th .ui-table-status-list li{ border-bottom:1px solid #e0e0e0;}
+.ui-table th .ui-table-status-list li.noborder{ border:none}
+.ui-table th .ui-table-status-list li a{ color:#666; display:block; padding:2px 5px 2px 3px; _padding-top:4px}
+.ui-table th .ui-table-status-list li a:hover{text-decoration:none; background:#f6f6f6}
+/* 表格按钮*/
+.ui-table .ui-table-btn{ background:url(../skins/default/button.png) no-repeat 0 -170px; display: inline-block; height:24px; line-height:24px; padding-left:5px; color:#466F86; cursor:pointer; white-space:nowrap}
+.ui-table .ui-table-btn span{background:url(../skins/default/button.png) no-repeat right -170px; display:inline-block; padding-right:5px; margin-right:-2px; position:relative}
+.ui-table .ui-table-btn:hover{ background-position:0 -146px; color:#09c; text-decoration:none}
+.ui-table .ui-table-btn:hover span{ background-position:right -146px;}
+.ui-table a.disabled{ color:#999; cursor:default;background:url(../skins/default/button.png) no-repeat 0 -194px}
+.ui-table a.disabled span{background:url(../skins/default/button.png) no-repeat right -194px;}
+.ui-table a.disabled:hover{ color:#999;background-position:0 -194px;}
+.ui-table a.disabled:hover span{ color:#999;background-position:right -194px;}
+.ui-table .fnBtn{display:inline-block; width:15px; height:15px; overflow:hidden; background: url(../skins/default/table.png) no-repeat; cursor:pointer; margin:0 3px}
+/*table不会换行的页面*/
+.oneLineHeight .tableScroll .ui-table tbody td{height:22px}
+/*table前面有表单的*/
+.hasFormBefore .tableScroll{height:350px}
+.tableFoot{background:#fafafa}/*表格脚部颜色样式*/
+/*消息*/
+.messageBtn{ display:inline-block; cursor:pointer; padding:2px 4px}
+.messageBtn a{ width:10px; height:15px; background:url(../skins/default/icon.gif) no-repeat 0 0; display:inline-block; overflow:hidden}
+.messageBtn a:hover{background-position: 0 -15px}
+span.messageBtn.active{ border:1px solid #B4B4B4; background:#fff; border-right:none; position:relative; z-index:2}
+span.messageBtn.active a{ background-position: 0 -15px}
+.messageBox{ position:absolute; background:#fff url(../skins/default/table_bg.png) repeat-x 0 -293px; border:1px solid #B4B4B4; padding:0 8px 8px 8px; margin:-4px 0 0 -5px;_margin:0 0 0 -5px; display:none; z-index:1;
+/* modern web browsers */
+	-moz-box-shadow:1px 2px 4px #bbb;
+	-webkit-box-shadow:1px 2px 4px #bbb;
+	box-shadow:1px 2px 4px #bbb;
+	/* gte=ie8 */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Glow(color=#aaaaaa,strength=4) progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=0,strength=4) progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=90,strength=4) progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=180,strength=4) progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=270,strength=4)";
+	/* lte=ie7 */
+	*filter:
+    progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=0,strength=4)
+    progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=90,strength=4)
+    progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=180,strength=4)
+    progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=270,strength=4);
+}
+.messageBoxCnt{background:#fff url(../skins/default/table_bg.png) repeat-x 0 -293px;}
+.messageBoxCnt .messagePage{ padding-top:5px; overflow:hidden;zoom:1; width:260px}
+.messageBoxCnt  ul.scrollBox{ height:75px;overflow-y:auto}
+.messageBoxCnt .messagePage a,.messageBoxCnt .messagePage span{ padding:2px 5px; border:1px solid #ddd; background:#fff; float:left; margin-right:2px; text-decoration:none}
+.messageBoxCnt .messagePage a:hover,.messageBoxCnt .messagePage span.current{ background:#06C; color:#fff; border-color:#09C; width:auto; height:auto}
+.messageBoxCnt .messagePage span.prev,.messageBoxCnt .messagePage span.next{border:1px solid #eee; background:#fafafa;color:#999}
+.messageBox .closeBtn{ width:12px; height:12px; position:absolute; right:8px; top:9px;background:url(../skins/default/icon.gif) -83px 0;}
+.messageBox .closeBtn:hover{ background-position:-71px 0}
+.messageBoxCnt li{ border-bottom:1px dashed #ccc; padding:5px 0; color: #333}
+.messageBoxCnt li span{ margin-right:5px; color:#999;}
+/*分页条*/
+.ui-page{ padding:15px 0 0 0;line-height:23px}
+.ui-page ul li{float:left;margin-right:6px;}
+.ui-page ul li a,.ui-page ul li p{ height:23px; line-height:23px;display:block; background:url(../skins/default/button.png) no-repeat 0 -100px;  padding-left:8px;white-space:nowrap;color:#575757; float:left; cursor:pointer;}
+.ui-page ul li p{ cursor:text}
+.ui-page ul li a span,.ui-page ul li p span{ display:block; background:url(../skins/default/button.png) no-repeat right -100px; padding-right:8px;  float:left; position:relative;padding-left:0;}
+.ui-page ul li a{color:#06c}
+.ui-page ul li a:hover,.ui-page ul li.active a{ background-position:0 -123px}
+.ui-page ul li a:hover span,.ui-page ul li.active a span{ background-position:right -123px; color:#c60}
+.ui-page s{width:5px; height:10px; background:url(../skins/default/icon.gif) no-repeat 0 -49px; vertical-align: middle;margin:0 3px 0 0}
+.ui-page ul li a s { background-position:0 -62px}
+.ui-page ul li.ui-page-hasArrow a span, .ui-page ul li.ui-page-hasArrow span{line-height:23px;height:23px;_padding-top:6px;_height:16px}
+.ui-page .page-arrow-right{ background-position:-5px -49px; margin-left:3px; margin-right:0}
+.ui-page a span .page-arrow-right{ background-position:-5px -62px}
+.ui-page input{ border:1px solid #ccc; height:21px}
+.ui-page .ui-page-btn{ height:23px; background:url(../skins/default/table.png) no-repeat 0 -27px; padding-left:8px;display: inline-block;color:#666; font-weight:bold; cursor:pointer}
+.ui-page .ui-page-btn:hover{ color:#06C}
+.ui-page .ui-page-btn span{background:url(../skins/default/table.png) no-repeat right -27px; display: inline-block; padding-right:8px; margin-right:-2px; position:relative}
+.ui-page .ellipsis{ background:none; padding-left:0; line-height:17px}
+
+
+/*表单美化*/
+.ui-form{}
+.formLine{ padding:3px 0 2px 0; float:left}
+.formLineRemark{ padding:3px 0 2px 12px; float:left}
+.secondInput{ margin-left:8px}
+.ui-form label{ float:left; width:65px; height:20px; line-height:19px;  text-align:right; padding-right:10px;margin-top:-1px}
+.ui-form input{ float:left; color:#666; vertical-align:middle; height:18px; line-height:17px;_line-height:19px}
+.inputCover input,.inputCover textarea, .inputCover input.thisstyle{ padding:0; border:none; background:url(about:blank)}
+/*定义背景时的css
+.ui-form .inputCover{ background:url(../skins/default/form.png) no-repeat 0 0; padding-left:5px; float:left}
+.ui-form .inputCover .inputCoverR{background:url(../skins/default/form.png) no-repeat right 0; padding-right:5px; float:left; margin-right:-2px; position:relative}
+.ui-form .cur{background-position:0 -24px}
+.ui-form .focus{background-position:0 -48px}
+.ui-form .cur .inputCoverR{ background-position:right -24px}
+.ui-form .focus .inputCoverR{ background-position:right -48px}
+*/
+ .inputCover,.selectCover{position:relative;vertical-align: middle;border-right:1px solid #A5B7C0;border-left:1px solid #A5B7C0; float:left; margin:0 5px 0 0;display:inline}
+.inputCover .inputCoverCnt,.selectCover .selectCoverCnt{float:left;_position:relative;border-top: 1px solid #A5B7C0;border-bottom:1px solid #A5B7C0; margin:-1px 0;padding:0 4px;background:#fff; overflow:hidden}
+.selectCover{ padding:0}
+.selectCover .selectCoverCnt{ padding:0}
+.selectCover select{  margin:-1px -1px -2px -1px; _margin:-1px -2px -1px -2px;height:19px;line-height:19px; _height:24px;padding:0 }
+.selectMul select{height: auto; margin:-1px;_margin:-4px -3px -3px -3px}
+.combobox .inputCoverCnt{ position:relative; overflow:visible}
+.combobox  input{}
+.combobox  select{ top:18px; left:0; height:auto; display:none; z-index:1}
+
+/*空运新增结构*/
+.airinfoGrid{
+	width:300px;padding-top:15px;margin-top:15px;
+	border-top: 1px solid #ccc;
+}
+
+
+.airdropDown{
+	position: relative;
+}
+.airdropDownCnt{
+	position: absolute;right: 160px;top: 25px;z-index: 1000;
+	width: 265px;height: 125px;padding: 10px;
+	border: 1px solid #ccc;background: #fff;
+} 
+
+/*============== */
+
+
+.inputCover:hover,.selectCover:hover{ border-color: #09c}
+.inputCover:hover .inputCoverCnt,.selectCover:hover .selectCoverCnt{ border-color:#09c; background:#F1FAFE}
+.textareaCover .inputCoverCnt{ padding-right:0}
+.textareaCover .inputCoverCnt textarea{display:block}
+.inputMiddleText{ float:left; margin-right:5px; line-height:20px;margin-top:-1px}
+.ui-form div.readonly,.ui-form div.readonly:hover{ border-color: #E6E6E6}
+.ui-form div.readonly .inputCoverCnt input,.ui-form fieldset.readonly textarea,.ui-form div.readonly .inputCoverCnt textarea{color:#666}
+.ui-form div.readonly .inputCoverCnt textarea{background:transparent}
+.ui-form div.readonly .inputCoverCnt,.ui-form div.readonly:hover .inputCoverCnt,.ui-form div.readonly .selectCoverCnt,.ui-form div.readonly:hover .selectCoverCnt{border-color:#E6E6E6; background:#fafafa}
+.ui-form div.readonly input,.ui-form div.readonly textarea{ color: #bcbcbc}
+
+.detailJsPage .formLine{padding:5px 0 4px 0}
+.detaiJsBtm {border-top:1px dashed #ccc;clear:both; padding:20px 0 0 0;margin-top:10px; position:ralative}
+.detaiJsBtm .ui-form-btn{ margin:-5px 0 0 0; float:right}
+/* 自定义input */
+.ui-form .autoCompleteInput s,.ui-form .datePickerInput s,.ui-form .comboGridInput s{ width:14px; height:14px; background:url(../skins/default/icon.gif) no-repeat -25px -47px; float:left; margin:2px 0 0}
+.ui-form .autoCompleteInput .inputCoverCnt,.ui-form .datePickerInput .inputCoverCnt,.ui-form .comboGridInput .inputCoverCnt{ padding-right:3px}
+.ui-form .autoCompleteInput input,.ui-form .datePickerInput input{ cursor:default}
+/* autoCompleteInput 样式 */
+.ui-form .autoCompleteInput input,.ui-form .datePickerInput input,.ui-form .comboGridInput input{ padding-right:5px}
+.ui-form .autoCompleteInput:hover s{ background-position:-25px -61px}
+.ui-form .readonly s.iconAutoComplete{ background-position:-25px -75px}
+.ui-autocomplete {max-height: 200px;_height:100px;position:absolute;left:0;top:21px;overflow-y: auto;overflow-x: hidden;padding-right: 20px;}
+/* select 时间框样式 */
+.ui-form .datePickerInput s{ background-position:-11px -47px}
+.ui-form .readonly s.iconDatePicker{ background-position:-11px -61px}
+/* select 弹出框框样式 */
+.ui-form .comboGridInput s{ background-position:-11px -75px}
+.ui-form .readonly s.iconComboGrid{ background-position:-11px -89px}
+/* 星号 */
+.ui-form .required{ color:red; line-height:14px; float:left; text-align:center; width:10px; margin-left:-5px;margin-top:2px}
+
+/* radio 图片定义
+.ui-form .radioCover{ float:left;}
+.ui-form .radioCover input{ display:none}
+.ui-form .radioCover label{ float:none; cursor:pointer}
+.ui-form .radioCover s{ background:url(../skins/default/form.png) no-repeat 0 -96px; width:12px; height:12px; margin-right:3px}
+.ui-form .radioCover label.active s { background-position:0 -108px;}
+.ui-form .radioErro label{ color:#C00}
+.ui-form .radioErro s{ background-position:0 -120px}*/
+.ui-form .radioContainer,.ui-form .checkboxContainer{ float:left}
+.ui-form .radioContainer label{ cursor:pointer; width:auto; margin-right:5px}
+.ui-form .checkboxLabelPR3 label{padding-right:3px}
+/*radio 错误*/
+.ui-form .radioBox label{ text-align:left; width:auto}
+/* checkbox */
+.checkboxContainer{white-space:nowrap}
+.ui-form .checkboxContainer label{ width:auto;}
+.ui-form .checkboxNoPadding label{padding:0}
+/* textarea */
+.ui-form fieldset{ margin-top:12px;position:relative;border:1px solid #A5B7C0;float:left;z-index:1}
+.ui-form fieldset.readonly{border-color:#E6E6E6}
+.ui-form fieldset legend{color:#30545C;position:absolute;top:-10px}
+.ui-form fieldset label{padding:0 5px; font-weight:bold; width:auto}
+.ui-form fieldset .required{ padding-right:5px; height:auto; margin-top:7px; line-height:12px}
+.ui-form fieldset textarea{ border:none;background:#fff; color:#666;padding:5px}
+.ui-form fieldset.readonly textarea{background:#FAFAFA}
+.textAreaOneLine .inputCoverCnt textarea{  height:15px;padding-top:1px;resize:none;}/* textarea  单行*/
+.textAreaOneLine .inputCoverCnt{padding-right:0}/* textarea  单行*/
+.textareaCover{ position:relative;float:left;z-index:1;margin:12px 0 0 0;}
+.textareaCover label{ position:absolute;left:5px;top:-10px;_top:-8px;font-weight:700;z-index:2;padding:0 5px; height:auto; line-height:16px; width:auto; background:url(../skins/default/teaxareaTitle.gif)  repeat-x 0 -14px;_background-position:0 -16px;}
+.ui-form .textareaCover textarea{ padding:5px; height:100px}
+.ui-form .textareaCover:hover label{ background-position:0 -44px}
+.ui-form .textareaCover.readonly:hover label{ background-position:0 -15px}
+.ui-form .textareaCover label .required{ display:inline-block; float:none; margin:0; font-weight:500}
+.ui-form .textareaCover.erroBox label{ background-position:0 -74px; _background-position:0 -76px}
+.textAreaNoLabel{ margin-top:1px}/*没有label的textarea*/
+/* botton */
+.btnLine{ padding:10px 0 0 10px;clear:both}
+.ui-form-btn{display:inline-block; height:28px; line-height:28px; background:url(../skins/default/button.png) no-repeat 0 0; padding-left:10px; cursor:pointer; margin-right:8px; color:#06c}
+.ui-form-btn span{ display:inline-block; background:url(../skins/default/button.png) no-repeat right 0; padding-right:10px; margin-right:-2px; position:relative}
+.ui-form-btn:hover{ background-position:0 -28px; color:#06C; text-decoration:none}
+.ui-table .ui-form-btn:hover{ text-decoration:none}
+.ui-form-btn:hover span{ background-position:right -28px}
+.ui-form-btn.disabled{color:#ccc;cursor:default}
+.ui-form-btn.disabled:hover{background-position:0 0}
+.ui-form-btn.disabled:hover span{background-position:right 0}
+.btnBottomLne{border-top:1px solid #ddd;padding:10px 0 5px 0;clear:both;margin-top:20px;float:left;width:100%;display:inline}/*底部按钮栏*/
+/*input text错误
+.ui-form .inputErro{ background-position:0 -72px}
+.ui-form .inputErro .inputCoverR{ background-position:right -72px}
+.ui-form input.erro{ border:1px solid #CB0202; background:#FFEBE8; color:#930}
+*/
+.ui-form div.erroBox{ border-color:#c00; background:#FDF5F2;}
+.ui-form fieldset.erroBox{ border:1px solid #c00; background:transparent}
+.ui-form div.erroBox .inputCoverCnt,.ui-form div.erroBox .selectCoverCnt{ border-color:#c00; background:#FDF5F2}
+.ui-form div.erroBox,.ui-form div.erroBox:hover{ border-color:#C00; background:#FDF5F2}
+.ui-form div.erroBox:hover .inputCoverCnt,.ui-form div.erroBox:hover .selectCoverCnt{border-color:#C00; background:#FDF5F2}
+.ui-form fieldset.erroBox:hover{background:transparent}
+
+.erroInfoBox{z-index:50; width:120px;border:2px solid #c30; background:#FFE6E6 url(../skins/default/form.png) no-repeat -35px -96px; position:absolute; padding:6px 10px 6px 30px; color:#c00; line-height:16px}
+.erroInfoBox span{display:block}
+.erroInfoBox .erroInfoBoxArrow{ width:18px; height:10px;  background:url(../skins/default/icon.gif) no-repeat -101px -40px; position:absolute;top:-10px; overflow: hidden; left:12px}
+.erroInfoBox .erroAttentionIcon{ width:15px; height:16px; overflow: hidden; position:absolute; left:8px; top:6px;background:url(../skins/default/form.png) no-repeat -20px -96px; }
+.ui-table tr .erroInfoBox{white-space:normal;}
+
+/*315体验计划input凸显样式*/
+.input-orage,.input-orage:hover,.input-orage .inputCoverCnt,.input-orage:hover .inputCoverCnt{border-color: #E17100}
+.input-orage:hover .inputCoverCnt{background:#FFFAE8;}
+/*315体验计划input凸显样式 结束*/
+/*tips*/
+
+.fui-tips {
+	position: absolute;
+	padding: 8px 12px;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 4, 0.4);
+	-moz-box-shadow: 0 0 5px rgba(0, 0, 4, 0.4);
+	box-shadow: 0 0 5px rgba(0, 0, 4, 0.4);
+	background: #fff;
+	color: #22414a;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	z-index: 1200
+}
+
+.fui-tips .fui-close {
+	font-size: 12px;
+	top: 0;
+	right: 5px;
+	color: #d0c1b7
+}
+
+.fui-tips .fui-close:hover {
+	color: #000
+}
+
+.fui-tips-arrow {
+	color: #ccc;
+	position: absolute;
+	left: -7px;
+	_left: -8px;
+	top: 7px;
+	font: 14px Arial, Helvetica, sans-serif
+}
+
+.fui-tips-arrow em {
+	position: absolute;
+	left: 1px;
+	color: #fff
+}
+
+.fui-tips s {
+	vertical-align: top;
+	*vertical-align: middle
+}
+
+.fui-tips-arrow-right em {
+	left: -1px
+}
+
+.fui-tips .top {
+	left: 8px;
+	top: -9px;
+	*top: -8px
+}
+
+.fui-tips .top em {
+	left: 0;
+	top: 1px
+}
+
+.fui-tips .right {
+	left: auto;
+	top: 8px;
+	right: -8px
+}
+
+.fui-tips .right em {
+	left: auto;
+	top: 0;
+	right: 1px
+}
+
+.fui-tips .bottom {
+	left: 8px;
+	top: auto;
+	bottom: -9px;
+	_bottom: -11px
+}
+
+.fui-tips .bottom em {
+	left: 0;
+	top: -1px
+}
+
+
+.ui-form .MR0{ margin-right:0}
+.ui-form .MR5{ margin-right:5px}
+.ui-form .MR8{ margin-right:8px}
+.ui-form .MR9{ margin-right:9px}
+.ui-form .MR10{ margin-right:10px}
+.ui-form .MR12{ margin-right:12px}
+.ui-form .MR15{ margin-right:15px}
+.ui-form .MT2{margin-top:2px}
+.ui-form .MT5{margin-top:5px}
+.ui-form .MT8{margin-top:8px}
+.ui-form .MT10{margin-top:10px}
+.ui-form .MT15{margin-top:15px}
+.ui-form .fontAtt label{color:#600}
+.detailAddBtn{background:url(../skins/default/icon.gif) no-repeat -10px -15px;width:16px;height:16px;overflow:hidden;float:left;margin:1px 2px}
+.detailAddBtn:hover{background-position:-26px -15px}
+.detailRemoveBtn{background-position: -40px -80px;width:16px;height:16px;margin:1px 2px}
+.detailRemoveBtn:hover{background-position:-56px -80px}
+
+.zindexup{ z-index:100}
+.zindexuperro{ z-index:100}
+/*和按钮同个高度*/
+.inputWithBtn{padding:10px 0}
+.ui-form .inputWithBtn input{height:20px;line-height:20px;}
+.ui-form .inputWithBtn label{height:20px;line-height:20px}
+.ui-form .inputWithBtn .ui-form-btn{height:22px;line-height:22px;background-position:0 -56px;margin-top:-1px}
+.ui-form .inputWithBtn .ui-form-btn span{background-position:right -56px}
+.ui-form .inputWithBtn .ui-form-btn:hover{background-position:0 -78px}
+.ui-form .inputWithBtn .ui-form-btn:hover span{background-position:right -78px}
+/*联系信息
+.contactInfo{position:absolute;display:block;background:#fff;
+left:396px;top:3px;z-index:100;border:2px solid #D2DCE6;overflow:hidden;display:none}*/
+.contactInfo{background:#fff;border:2px solid #D2DCE6;overflow:hidden;float:left;margin:-10px -400px -100px -30px;position:relative;z-index:100;display:none}
+.contactInfo ul{border:1px solid #96ACC2; padding:6px 25px 6px 40px;position:relative;z-index:2}
+.contactInfo li.middle{padding:8px 0 8px 15px}
+.contactInfo li{border-left:1px solid #C9D5E0;padding-left:15px}
+.contactInfo li a{color:#06c}
+.contactInfo li a:hover{color:#09c}
+.contactInfo .close{position:absolute;right:7px;top:5px;background-position:-72px -60px;width:12px;height:12px;z-index:3}
+.contactInfo .close:hover{background-position:-87px -60px}
+.contactInfo iframe{ position:absolute;left:0;top:0;width:100%;height:300px}
+/*22高度的input*/
+.inputH22 input,.inputH22 label{height:22px;line-height:22px}
+.inputH22 .formLine{padding:5px 0}
+.inputH22 .formLine .datePickerInput s{margin-top:4px}
+/*tab 选项卡*/
+.tabContainer{ clear:both}
+.tabMenu{ border-bottom:1px solid #06C;padding:0 0 0 15px}
+.tabMenu li{ float:left; border-top:1px solid #ccc; cursor:pointer; margin-right:5px;position:relative;}
+.tabMenu li span{display:block;border-left:1px solid #ccc;border-right:1px solid #ccc;background:#efefef;padding:6px 10px;position:relative;margin:0 -1px;float:left;color:#666}
+.tabMenu li.hover{ border-color:#06c;border-bottom:none; color:#06C; margin:1px 5px -1px 0;background:#fff url(../skins/default/bg-content.png); font-weight:bold}
+.tabMenu li.hover span{ border-color:#06C;background:transparent;color:#06c}
+.tabMenu li.tabinfo{border:none;float:right;padding:8px 0 0 0;margin:0;cursor:default}
+.tabMenu li.tabinfo s{margin-right:5px}
+.tabCnt{ display:none; padding-top:3px}
+.tabMenuGray{margin-bottom:20px}
+.tabMenuGray li.hover,.tabMenuGray li.hover span{}
+/*表单框*/
+.conBox{ border:1px solid #eee;padding:3px;background:#efefef}
+.conBoxin{padding:25px;border:1px solid #ddd;background:#fafafa}
+
+/*弹出 文本域*/
+.openTextarea{ display:none;position:absolute;z-index:10; width:105px;height:20px;border:3px solid #8F8F8F;background:#fff}
+.openTextarea .title{height:30px;line-height:30px;color:#fff;font-weight:700; background:#2C93DE;padding:0 8px;position:relative}
+.openTextarea .title  a{position:absolute;right:8px;top:0;color:#C1DDF2;display:block;_font-size:16px;_top:0;font-weight:700}
+.openTextarea .title  a:hover{color:#fff;font-weight:700}
+.openTextarea textarea{width:100%;border:none;background:transparent;color:#666;padding:10px;}
+.openTextarea .btnLine{border-top:1px dashed #ccc; text-align:right}
+#markCover{width:100%;height:100%;top:0;left:0;background:#fff;position:absolute;display:none;z-index:10}
+#markCover iframe{width:100%;height:100%}
+/*fieldset样式包裹框*/
+.defaultBg{background: url(../skins/default/bg-content.png)}
+.fieldset{border:1px dashed #999;clear:both;margin:10px 5px 0 0;padding-bottom:5px}
+.fieldset .title{ position:relative;padding:0 5px;font-weight:700;display:inline;top:-8px;left:10px}
+/*table头上的搜索框*/
+.tableTopFormCon{border:1px solid #EAEAEA;background:#fff;margin-bottom:8px;zoom:1}
+.tableTopFormCon .container{border:1px solid #cdcdcd;padding:4px;background:url(../skins/default/table_bg.png) repeat-x 0 -259px;zoom:1}
+.tableTopFormCon .container:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.ui-form .tableTopFormCon input{height:20px;line-height:20px;}
+.ui-form .tableTopFormCon label{height:22px;line-height:22px}
+.ui-form .tableTopFormCon .ui-form-btn{height:22px;line-height:22px;background-position:0 -56px;margin-top:-1px}
+.ui-form .tableTopFormCon .ui-form-btn span{background-position:right -56px}
+.ui-form .tableTopFormCon .ui-form-btn:hover{background-position:0 -78px}
+.ui-form .tableTopFormCon .ui-form-btn:hover span{background-position:right -78px}
+.tableTopFormCon .btnLine{padding:3px 0;clear:none}
+/*屏蔽层*/
+.fnCover{width:100%;height:520px;background:#fff;z-index:100;position:absolute;left:0;top:46px;overflow:hidden;opacity:0.01;filter:alpha(opacity=1)}
+.fnCover iframe{background:#000;width:100%;height:100%}
+#tabCnt2 .fnCover{top:0}
+/*灰色表单*/
+.ui-form .formdisabled .inputCover,.ui-form .formdisabled .inputCoverCnt,.ui-form .formdisabled .selectCover,.ui-form .formdisabled .selectCoverCnt
+	{ border-color: #E6E6E6;background:#FAFAFA}
+.ui-form .formdisabled s.iconAutoComplete{ background-position:-25px -75px}
+.ui-form .formdisabled s.iconDatePicker{ background-position:-11px -61px}
+.ui-form .formdisabled s.iconComboGrid{ background-position:-11px -89px}
+.ui-form .formdisabled select,.ui-form .formdisabled .inputCover input,.ui-form .formdisabled textarea{color:#999;background:#FAFAFA}
+.formdisabled .ui-form-btn{color:#ccc;cursor:default}
+.formdisabled .ui-form-btn:hover{background-position:0 0}
+.formdisabled .ui-form-btn:hover span{background-position:right 0}
+
+/*优势航线table*/
+.ui-table-gray{width:752px;color:#666;overflow:hidden;margin-bottom:10px}
+.ui-table-gray strong{color:#444}
+.ui-table-gray thead{background:#efefef}
+.ui-table-gray th{font-weight:700;text-align:left;color:#333}
+.ui-table-gray th,.ui-table-gray td{border:1px solid #ddd;padding:5px}
+
+.ui-table-gray ol li{padding:3px 0}
+.comContact{ border:2px solid #eee; margin-top:10px}
+.comContact table{ margin:0}
+.comContact table td{ border-color:#ccc}
+.comContact table td.keyWord{width:15%; background:#f5f5f5; text-align:right; color:#666;font-weight:700}
+.ui-table-gray p{margin:5px}
+.ui-table-gray .fn-left{padding-right:5px}
+
+/*老的优势航线新版上线后删除*/
+.ui-table-hangxian td{padding:1px 0;text-align:center;background:url(../skins/default/select.png) no-repeat center}
+.ui-table-hangxian td.notSelect,.ui-table-hangxian tr.notSelect td{background:none}
+.ui-table-hangxian td.notSelect{color:#999}
+.ui-table-hangxian .titlex,.ui-table-hangxian tr.notSelect .titlex{background:url(../skins/default/table_hangxian.gif) no-repeat center;height:36px;width:10%}
+.ui-table-hangxian td strong{display:block;text-align:right;padding:2px}
+/*新的的优势航线*/
+.ui-table-youshihangxian td{padding:4px;text-align:center;}
+.ui-table-youshihangxian td.select{background:url(../skins/default/select.png) no-repeat center}
+.ui-table-youshihangxian .titlex,.ui-table-youshihangxian tr.notSelect .titlex{background:url(../skins/default/table_hangxian_new.gif) no-repeat center;height:36px;width:10%}
+.ui-table-youshihangxian td strong{display:block;text-align:right;padding:2px}
+/*jquery ui弹出框重定义颜色*/
+.ui-dialog .ui-dialog-titlebar {background:#00A8E0; border:1px solid #33B9E6;border-bottom:1px solid #008AC7;border-radius:0; color:#fff}
+.ui-dialog .ui-dialog-titlebar-close span {background:url(../skins/default/icon.gif) -88px -80px }
+.ui-dialog .ui-dialog-titlebar-close:hover span, .ui-dialog .ui-dialog-titlebar-close:focus span{background-position:-72px -80px;}
+.ui-dialog{background:#008AC7;border: 3px solid #DAE0E7;padding: 1px;}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border:none; background:none}
+.ui-dialog .ui-dialog-content {border: 0; background: #fff; zoom: 1;border-top:1px solid #ccc }
+.ui-dialog .ui-dialog-buttonpane {margin:0;border:0 }
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { text-align:right ; border-top:1px solid #ccc; padding:5px 0;float:none }
+.ui-dialog .ui-dialog-buttonpane button {display:inline-block;border:none; margin: .5em .4em .5em 0; cursor: pointer;height:28px; background:url(../skins/default/button.png) no-repeat 0 0; padding-left:10px;margin-right:8px; color:#666  }
+.ui-button span.ui-button-text{display:inline-block;background:url(../skins/default/button.png) no-repeat right 0; padding:0 10px 0 0; margin-right:-2px; position:relative;height:27px;line-height:30px;white-space:nowrap;_overflow:hidden}
+.ui-dialog .ui-dialog-buttonpane button.ui-state-hover{background-position:0 -28px; color:#06C;}
+.ui-button.ui-state-hover span.ui-button-text{ background-position:right -28px}
+.ui-datepicker select.ui-datepicker-month,.ui-datepicker select.ui-datepicker-year { width: auto;}
+
+/*运价体验调整添加结构样式，by:Evan,07-02*/
+.status-tips-box{
+	float: left;
+}
+.publish-status-tag{
+	float: left; 
+	border: 1px solid #ff5d27;margin:0 5px; padding: 2px 7px;border-radius: 2px;
+	background: #ff8000; color: #fff; font-weight: bold; 
+}
+.status-tips-slidedown{
+	position: relative;float: left;cursor: pointer;
+}
+.status-tips-icon s{
+	background-position:-85px -17px;
+}
+.icon-hover{
+	position: absolute;top: 16px;left: 0;z-index: 300;
+	border: 1px solid #ccc;padding: 5px;width: 135px;
+	background: #fff;
+	text-align: left;
+}
+.icon-hover-cell,.icon-hover-last{
+	padding:5px;border-bottom: 1px solid #ccc;
+}
+
+.icon-hover-last{
+	border-width: 0;
+}
+/*===============================*/
+/*文本溢出加省略号*/
+.textOverflow {display:block; white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.w100p {
+  width: 100%;
+}
+.wa {
+  width: auto;
+}
+.tal {
+  text-align: left;
+}
+.tar {
+  text-align: right;
+}
+.w5 {
+  width: 5px;
+}
+.w10 {
+  width: 10px;
+}
+.w15 {
+  width: 15px;
+}
+.w20 {
+  width: 20px;
+}
+.w30 {
+  width: 30px;
+}
+.w40 {
+  width: 40px;
+}
+.w50 {
+  width: 50px;
+}
+.w55 {
+  width: 55px;
+}
+.w60 {
+  width: 60px;
+}
+.w65 {
+  width: 65px;
+}
+.w70 {
+  width: 70px;
+}
+.w75 {
+  width: 75px;
+}
+.w80 {
+  width: 80px;
+}
+.w85 {
+  width: 85px;
+}
+.w90 {
+  width: 90px;
+}
+.w95 {
+  width: 95px;
+}
+.w96 {
+  width:96px
+ }
+.w100 {
+  width: 100px;
+}
+.w110 {
+  width: 110px;
+}
+.w120 {
+  width: 120px;
+}
+.w125 {
+  width: 120px;
+}
+.w130 {
+  width: 130px;
+}
+.w140 {
+  width: 140px;
+}
+.w150 {
+  width: 150px;
+}
+.w155 {
+  width: 155px;
+}
+.w160 {
+  width: 160px;
+}
+.w170 {
+  width: 170px;
+}
+.w200 {
+  width: 200px;
+}
+.w210{width:210px}
+.w250 {
+  width: 250px;
+}
+.w300 {
+  width: 300px;
+}
+.w400{
+	width: 400px;
+}
+
+
+/* 隐藏, 通常用来与 JS 配合 */
+.none{
+  display: none;
+}
+
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover { border: 1px solid #999999; background-color:#eee;   font-weight: normal; color: #212121; }
+
+/*margin定义*/
+.M10{margin:10px}
+.MLR10{margin-right:10px;margin-left:10px}
+.MLR5{margin-right:5px;margin-left:5px}
+.MR0{ margin-right:0}
+.MR5{ margin-right:5px}
+.MR8{ margin-right:8px}
+.MR9{ margin-right:9px}
+.MR10{ margin-right:10px}
+.MR12{ margin-right:12px}
+.MR15{ margin-right:15px}
+.MR17{ margin-right:17px}
+.MT5{margin-top:5px}
+.MT8{margin-top:8px}
+.MT10{margin-top:10px}
+.MT15{margin-top:15px}
+.MB5{margin-bottom:5px}
+.MB10{margin-bottom:10px}
+.MB15{margin-bottom:15px}
+.PD5{padding:5px}
+.PD10{padding:10px}
+.PD15{padding:15px}
+.PD20{padding:20px}
+/*右对齐*/
+.TAR{text-align:right}
+/*左对齐*/
+.TAL{text-align:left}
+/*居中对齐*/
+.TAC{text-align:center}
+/*加粗*/
+.FWB,.fwb{font-weight:700}
+
+.dii{display:inline}
+/*图标定义*/
+s{display: inline-block;vertical-align:middle; overflow:hidden}
+.icon{background:url(../skins/default/icon.gif) no-repeat;width:15px;height:15px;display:inline-block;vertical-align:middle;overflow:hidden;line-height:100px}
+.iconOperator{background-position:-25px 0}
+.iconChageTime{background-position:-10px 0; margin-left:10px}
+.iconAdditional {width:16px;height:16px;background-position:-10px -31px; margin:1px 0 0 3px;cursor:pointer;float:left}
+.iconReadStatus{width:7px; height:7px; background-position:0 -38px; cursor:pointer; margin-right:3px}
+.iconGroup,.iconMessage{ width:16px; height:16px; background-position:-102px 0; margin-right:5px; float:left; margin-top:10px}
+.iconMessage{ width:22px; height:24px; background-position:-99px -16px; margin-top:7px}
+.iconBan{width:15px;height:16px;background-position:-42px -63px;margin-right:5px}
+.iconContact{float:left;background-position:-85px -45px;width:16px;position:relative;z-index:101;cursor:pointer}
+.iconEdit{background-position:-104px -80px}
+.iconSave{background-position:-104px -64px}
+.notread .iconReadStatus{ background-position:0 -30px;}
+.delInfo{background-position:-42px 0;width:14px; height:14px}
+.delInfo:hover{background-position:-57px 0}
+.addInfo{background-position:-42px -16px;width:14px; height:14px}
+.addInfo:hover{background-position:-57px -16px}
+.bdelInfo{background-position:-42px -31px;width:14px; height:14px}
+.bdelInfo:hover{background-position:-57px -31px}

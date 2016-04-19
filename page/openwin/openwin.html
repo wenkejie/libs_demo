@@ -1,0 +1,59 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>demo</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="ClearType" content="true">
+	<!-- 样式引入 -->
+<!-- 	<link rel="stylesheet" href="widget/spinner/jquery.spinner.css"> -->
+	<link rel="stylesheet" href="../../css/example.css">
+	<link rel="stylesheet" href="../../css/common-v1.2.css">
+</head>
+<body>
+	<div class="tal">
+		<p>
+			<label class="nui-label w120">信息框：</label>
+			<a class="nui-btn" href="javascript:" id="info1">例1</a>
+			<a class="nui-btn" href="javascript:" id="info2">例2</a>
+			<a class="nui-btn" href="javascript:" id="info3">例3</a>
+			<a class="nui-btn" href="javascript:" id="info4">例4</a>
+			<a class="nui-btn" href="javascript:" id="info5">例5</a>
+		</p>
+       <p class="pt20">
+	      	<label class="nui-label w120">页面层/iframe层：</label>
+	      	<a class="nui-btn"  href="javascript:" id="p1">页面自定义</a>
+	      	<a class="nui-btn"  href="javascript:" id="p2">图片弹出</a>
+	      	<a class="nui-btn"  href="javascript:" id="p3">多媒体</a>
+       </p>
+       <p class="pt20">
+	      	<label class="nui-label w120">加载层：</label>
+	      	<a class="nui-btn"  href="javascript:" id="lDing1">页面自定义</a>
+       </p>
+       <p class="pt20">
+	      	<label class="nui-label w120">提示框：</label>
+	      	<a class="nui-btn"  href="javascript:" id="tips1">上tips</a>
+	      	<a class="nui-btn"  href="javascript:" id="tips2">右tips</a>
+	      	<a class="nui-btn"  href="javascript:" id="tips3">下tips</a>
+	      	<a class="nui-btn"  href="javascript:" id="tips4">左tips</a>
+       </p>
+       <p class="pt20">
+	      	<label class="nui-label w120">其他案例：</label>
+	      	<a class="nui-btn"  href="javascript:" id="other1">默认prompt</a>
+	      	<a class="nui-btn"  href="javascript:" id="other2">屏蔽浏览器滚动条</a>
+	      	<a class="nui-btn"  href="javascript:" id="other3">弹出即全屏</a>
+	      	<a class="nui-btn"  href="javascript:" id="other4">正上方</a>
+       </p>
+       <!-- <a class="nui-btn"  href="javascript:" id="test5">测试5</a> -->
+    </div>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/require.js"></script>
+	<script type="text/javascript" src="/static/js/main2.js" ></script>
+	<script type="text/javascript">
+			require(["openwin"], function(){
+				console.log("===")
+			})
+	</script>
+</body>
+</html>

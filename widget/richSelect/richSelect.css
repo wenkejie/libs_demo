@@ -1,0 +1,59 @@
+/* ----- richselect样式------*/
+.selectInputDown {
+  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.95);
+  background: #fff\9;
+  opacity: 0.97\9;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  border: 1px solid #53738a;
+  width: 250px;
+  display: none;
+  z-index: 100;
+}
+.selectInputDown .paddingCon {
+  padding: 10px 15px;
+}
+.selectInputDown .title {
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+  line-height: 16px;
+  text-align: left;
+  color:#333;
+  font-weight: 700;
+}
+.selectInputDown .title a {
+  font-weight: 700;
+  color: #06C;
+}
+.selectInputDown .title a:hover {
+  color: #09F;
+  text-decoration: underline;
+}
+.selectInputDown .title s {
+  background-position: -119px -17px;
+}
+.selectInputDown .title span{vertical-align: top}
+.selectInputDown ul {
+  padding: 3px 0 8px 0;
+}
+.selectInputDown li a {
+  display: block;
+  border-bottom: 1px dashed #dddddd;
+  padding: 4px 0;
+  color: #666;
+  zoom: 1;
+}
+.selectInputDown li a .iconGayDot, .selectInputDown .news li a .list-dot, .news .selectInputDown li a .list-dot {
+  background-position: -68px -34px;
+}
+.selectInputDown li a s{background-position: -68px -68px;}
+.selectInputDown li a:hover {
+  background: #efefef;
+  color: #333;
+  text-shadow: 1px 1px 0px white;
+}
+.selectInputDown li a:hover .iconGayDot, .selectInputDown .news li a:hover .list-dot, .news .selectInputDown li a:hover .list-dot {
+  background-position: -68px -51px;
+}

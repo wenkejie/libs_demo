@@ -1,0 +1,36 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>demo</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="ClearType" content="true">
+	<!-- 样式引入 -->
+<!-- 	<link rel="stylesheet" href="widget/spinner/jquery.spinner.css"> -->
+	<link rel="stylesheet" href="css/example.css">
+	<link rel="stylesheet" href="css/common-v1.2.css">
+</head>
+<body>
+	<div>
+        <a href="javascript:" id="j-sudu-turn" class="nui-btn">进度条</a><br/><br/>
+    </div>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript" src="static/js/require.js" data-main="static/js/susd"></script>
+
+	<script type="text/javascript" src="widget/jqueryui/jquery-ui-1.8.9.sina.min.js"></script>
+	<script type="text/javascript" src="widget/susd/jquery.bgiframe.min.js"></script>
+	<script type="text/javascript" src="widget/susd/jquery.susd.mini.js"></script>
+
+	<script type="text/javascript">
+
+		// require(['susd'] ,function() {
+		    $('#j-sudu-turn').click(function() {
+		         susd.overlay(true);
+		    });
+
+		// })　
+		
+	</script>
+</body>
+</html>

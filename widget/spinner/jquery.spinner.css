@@ -1,0 +1,119 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	font: inherit;
+	font-size: 100%
+}
+
+html {
+	line-height: 1
+}
+
+ol,ul {
+	list-style: none
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+caption,td,th {
+	vertical-align: middle;
+	text-align: left;
+	font-weight: 400
+}
+
+blockquote,q {
+	quotes: none
+}
+
+blockquote:after,blockquote:before,q:after,q:before {
+	content: "";
+	content: none
+}
+
+a img {
+	border: none
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
+	display: block
+}
+
+.spinner .decrease,.spinner .decrease[disabled],.spinner .increase,.spinner .value,.spinner .value.passive,.spinner-sprite {
+	/*background: url(spinner-sf0d5bd965d.png) no-repeat*/
+}
+
+.spinner {
+	overflow: hidden;
+	width: 86px;
+	height: 22px;border: 1px solid #ccc;
+	-webkit-box-shadow: 0 3px 3px -4px #aaa;
+	-moz-box-shadow: 0 3px 3px -4px #aaa;
+	box-shadow: 0 3px 3px -4px #aaa
+}
+
+.spinner .value,.spinner button {
+	float: left;
+	display: block;
+	margin: 0;
+	height: 100%;
+	text-align: center;
+	line-height: 25px
+}
+
+.spinner button {
+	padding: 0;
+	width: 22px;height: 22px;line-height: 22px;
+	outline: 0;border: none;
+	color: #888;background: #fffbee;
+	font-size: 20px;font-family: Arial;
+}
+
+.spinner .decrease {
+	border-right: 1px solid #ccc;
+	cursor: pointer;
+}
+
+.spinner .decrease i{
+	display: block;
+	width: 7px;border: 1px solid #888;*height: 0;*overflow: hidden;
+	margin: 0 auto;
+}
+
+
+.spinner .increase {
+	_line-height: 19px;
+	border-left: 1px solid #ccc;
+	cursor: pointer
+}
+
+
+.spinner .spinner-disabled {
+	background: #f1f1ed;
+	cursor: not-allowed;
+}
+
+.spinner .spinner-disabled i{
+	color: #bbb;
+}
+
+.spinner .value {
+	padding: 0 10px;
+	width: 22px;
+	height: 22px;line-height: 22px;
+	border: none;
+	color: #4693d0;text-align: right;
+	font-family: Arial;font-size: 14px;
+}
+
+.spinner .value.passive {
+	color: #4693d0
+}
+
+.spinner .error,.spinner .invalid {
+	background: #a00
+}
